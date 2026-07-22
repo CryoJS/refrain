@@ -1,52 +1,43 @@
+import * as React from "react"
+import Link from "next/link"
 import {
     NavigationMenu,
     NavigationMenuItem,
     NavigationMenuLink,
-    NavigationMenuList
+    NavigationMenuList,
+    navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import {
     Disc3 as RefrainIcon,
     Home as HomeIcon,
-    ListChecks as TasksIcon,
+    BarChart as StatsIcon,
     Music as MusicIcon,
     Settings as SettingsIcon
 } from "lucide-react";
 
 export default function Navbar() {
     return (
-        <NavigationMenu className={"mx-4 mt-2"}>
-            <NavigationMenuList>
+        <NavigationMenu>
+            <NavigationMenuList className={"gap-2"}>
                 <NavigationMenuItem className={"flex gap-2 mr-4 font-bold text-sidebar-primary"}>
                     <RefrainIcon />
                     Refrain
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <HomeIcon/>
-                        Home
-                    </NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="/"> <HomeIcon/>Home </Link>}/>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <TasksIcon/>
-                        Tasks
-                    </NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="/music"> <MusicIcon/>Music </Link>}/>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <MusicIcon/>
-                        Music
-                    </NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="/stats"> <StatsIcon/>Stats </Link>}/>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <SettingsIcon/>
-                        Settings
-                    </NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="/settings"> <SettingsIcon/>Settings </Link>}/>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
+import Timer from "@/components/timer";
 
 export default function Home() {
-  return (
-    <div className={"mx-6 my-2"}>
-        <p>hi hi hi</p>
-        <Button>Play</Button>
-    </div>
-  );
+    return (
+        <div className={"flex flex-col h-dvh justify-center items-center mx-6 my-2"}>
+            <Timer/>
+            <h1>hi</h1>
+        </div>
+    );
 }

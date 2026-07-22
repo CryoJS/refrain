@@ -1,7 +1,7 @@
 export default function Home() {
     return (
         <div className={"mx-6 my-2"}>
-            <p>change settings</p>
+            <p>hi hi hi these r ur tasks</p>
         </div>
     );
 }
